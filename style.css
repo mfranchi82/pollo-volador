@@ -1,0 +1,188 @@
+:root {
+    --background: #74C2FF;
+    --cabeza: #FFC300;
+    --ojo: #000;
+    --punto: #fff;
+    --cuerpo: #FF5733;
+    --pico: #FF6121;
+    --ala: #FEE14E;
+    --pata: #302E22;
+    --piso: #E6F4FF;
+    --nube: #E6F4FF;
+  }
+  
+  body {
+    background: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .cabeza {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: var(--cabeza);
+    border-radius: 100px 100px 0 0;
+  }
+  
+  .cuerpo {
+    position: relative;
+    width: 200px;
+    height: 130px;
+    background: var(--cuerpo);
+    border-radius: 0 0 100px 5px;
+  }
+  
+  .pico {
+    display: block;
+    position: absolute;
+    margin: -80px 200px;
+    width: 0; 
+    height: 0; 
+    border-left: 20px solid var(--pico);
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent; 
+  }
+  
+  
+  .ojo {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--ojo);
+    margin: -100px 150px;
+    border-radius: 50%;
+  }
+  
+  .punto-ojo {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--punto);
+    margin: -100px 150px;
+    border-radius: 50%;
+  }
+  
+  .ala {
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    background: var(--ala);
+    border-radius: 100px 5px;
+    margin: 0 -90px;
+    z-index: 1;
+    animation-name: pulse;
+    animation-delay: 1s;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes pulse {
+    0% {transform: scale(1) rotate(-10deg);}
+    50% {transform: scale(1.2) rotate(-20deg);}
+    100% {transform: scale(1) rotate(-10deg);}
+  }
+  
+  .nube1 {
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    background: var(--nube);
+    margin: -500px 140px;
+    border-radius: 60px;
+    animation: mov1 12s cubic-bezier(.87,.67,.83,.67) infinite;
+  }
+  
+  .nube1:after, .nube1:before {
+    content: '';
+    position: absolute;
+    background: var(--nube);
+    z-index: -1
+  }
+  
+  .nube1:after {
+    width: 140px; height: 140px;
+    top: -50px; left: 50px;
+    border-radius: 100px;
+  }
+  
+  .nube1:before {
+    width: 90px; height: 90px;
+    top: -30px; right: 50px;
+    border-radius: 200px;
+  }
+  
+  .nube2 {
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    background: var(--nube);
+    margin: 0px 140px;
+    border-radius: 60px;
+    z-index: 999;
+    animation: mov2 20s cubic-bezier(.87,.67,.83,.67) infinite;
+  }
+  
+  .nube2:after, .nube2:before {
+    content: '';
+    position: absolute;
+    background: var(--nube);
+    z-index: 999;
+  }
+  
+  .nube2:after {
+    width: 140px; height: 140px;
+    top: -50px; left: 50px;
+    border-radius: 100px;
+  }
+  
+  .nube2:before {
+    width: 90px; height: 90px;
+    top: -30px; right: 50px;
+    border-radius: 200px;
+  }
+  
+  @keyframes mov1 {
+    from {
+      margin-left: 70%;
+    }
+    
+    to {
+      margin-left: -70%;
+    }
+  }
+  
+  @keyframes mov2 {
+    from {
+      margin-left: 70%;
+    }
+    
+    to {
+      margin-left: -70%;
+    }
+  }
+  
+  
+  /*.pata {
+    position: absolute;
+    width: 50px;
+    height: 6px;
+    margin: -20px 50px;
+    background: var(--pata);
+  }*/
+  
+  /*.piso {
+    position: absolute;
+    width: 800px;
+    height: 300px;
+    margin: 30px -300px;
+    background: var(--piso);
+    border-radius: 150px 150px 0 0;
+  }*/
+  
+  
